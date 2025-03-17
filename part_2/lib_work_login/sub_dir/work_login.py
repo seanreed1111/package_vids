@@ -21,8 +21,9 @@ from pynput.keyboard import Key, Controller
 class WorkLogin:
     """Class that performs functions for login"""
 
-    def __init__(self, conf_path=os.path.join(os.path.expanduser("~"),
-                                              ".work_login.conf")):
+    def __init__(
+        self, conf_path=os.path.join(os.path.expanduser("~"), ".work_login.conf")
+    ):
         """Saves config file location"""
 
         self.conf_path = conf_path
@@ -59,12 +60,12 @@ class WorkLogin:
         for c in new_cmd:
             self._type_key(c)
         self._type_key(Key.enter)
-        time.sleep(.1)
+        time.sleep(0.1)
 
     def _type_key(self, key):
         """Types a key with a delay"""
 
         self.keyboard.press(key)
-        time.sleep(.005)
+        time.sleep(0.005)
         self.keyboard.release(key)
-        time.sleep(.005)
+        time.sleep(0.005)
